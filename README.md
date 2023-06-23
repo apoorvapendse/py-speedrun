@@ -10,4 +10,5 @@
 - #### Now you can use your todolist from anywhere simply by writing ***todo*** in the shell 
 
 
-[todoDemo.webm](https://github.com/apoorvapendse/py-speedrun/assets/102853901/58f0fe9f-3784-480e-9af5-49dae9ceeaf9)
+[todoDemo.webm](https://github.com/apoorvapendse/py-speedrun/assets/102853901/0005af40-9cc8-4d00-904c-8a45290a3fff)
+
