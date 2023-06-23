@@ -3,6 +3,8 @@ import os
 import time
 
 
+savePath = '/home/apoorva/Documents/GitHub/py-speedrun/'
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -17,7 +19,8 @@ class bcolors:
 
 todos = []
 
-with open ('todo.txt') as data:
+
+with open (savePath+'/todo.txt') as data:
     tasks = data.readlines()
     
     for task in tasks:
@@ -29,13 +32,15 @@ with open ('todo.txt') as data:
 def printTodos():
     os.system("clear");
     print(bcolors.OKGREEN+"Your Todos are:"+bcolors.ENDC)
+    count =1
     for todo in todos:
-        print(bcolors.OKCYAN + bcolors.UNDERLINE+todo+bcolors.ENDC)
+        print(str(count)+"."+bcolors.OKCYAN + bcolors.UNDERLINE+todo+bcolors.ENDC)
+        count+=1
     time.sleep(2)
     os.system("clear")
 
 while True:
-    operation = int(input("1.Add Task\n2.Remove Task\n3.Display Tasks\n4.Exit\n"))
+    operation = int(input("1.Add Task\n2.Remove Task\n3.Display Tasks\n4.Save and Exit\n"))
     if operation==1:
         os.system("clear")
        
@@ -47,9 +52,9 @@ while True:
     elif operation==2:
         os.system("clear")
         printTodos()
-        task = input("enter the task to be deleted:");
-        if task in todos:
-            todos.remove(task)
+        taskIndex = int(input("enter the number of the task to delete:\n"));
+        if taskIndex<=len(todos):
+            todos.remove(todos[taskIndex-1])
             printTodos()
         else:
             os.system("clear")
@@ -60,7 +65,7 @@ while True:
         os.system("clear")
         printTodos()
     else:
-        with open("todo.txt",'w') as data:
+        with open(savePath+'/todo.txt','w') as data:
             for todo in todos:
                 
                 data.write(todo+'\n')
