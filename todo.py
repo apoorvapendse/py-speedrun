@@ -17,6 +17,13 @@ class bcolors:
 
 todos = []
 
+with open ('todo.txt') as data:
+    tasks = data.readlines()
+    
+    for task in tasks:
+        if(task.endswith("\n")):
+           task= task.replace("\n","")    
+        todos.append(task) 
 
 
 def printTodos():
@@ -53,5 +60,10 @@ while True:
         os.system("clear")
         printTodos()
     else:
+        with open("todo.txt",'w') as data:
+            for todo in todos:
+                
+                data.write(todo+'\n')
+        
         exit();
         
