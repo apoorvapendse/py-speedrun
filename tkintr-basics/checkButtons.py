@@ -5,6 +5,8 @@ root.title("Form")
 
 def getData():
     print(name.get(),country.get(),gender.get(),age.get(),isStudent.get())
+    with open("data.txt",'a') as file:
+        file.write(f"{name.get()} {country.get()} {gender.get()} {str(age.get())} {str(isStudent.get())}\n");
 
 
 

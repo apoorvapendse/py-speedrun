@@ -1,3 +1,4 @@
 fly
 code
 swim
+10 pushups
